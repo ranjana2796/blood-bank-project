@@ -1,0 +1,41 @@
+<div class="container" align="center">
+    <div class="jumbotron jumbotron-fluid"  id ="showbg">
+        <p id="notice"><%= notice %></p>
+
+        <h2><u> Blood Bank Details</u></h2>
+        <br><br>
+
+        <table align="center">
+  
+        <tbody>
+          <tr>
+            <th> &emsp; &emsp; &emsp; &emsp; NAME</th>
+            <td>: &nbsp <%= @bloodbank.name%> </td>   
+          </tr>
+          <tr>
+            <th> &emsp; &emsp; &emsp; &emsp;  ADDRESS</th>
+            <td>: &nbsp <%= @bloodbank.address %> </td>
+          </tr>
+          <tr> 
+            <th> &emsp; &emsp; &emsp; &emsp;   CATEGORY</th>
+            <td>: &nbsp <%= @bloodbank.category %> </td>
+          </tr>
+          <tr>
+            <th> &emsp; &emsp; &emsp; &emsp;   AVAILABILITY</th>
+            <td>: &nbsp <%= @bloodbank.availability %> </td>
+          </tr>
+  
+      </tbody>
+  </table>
+       
+  <br><br><br>
+
+        <%= link_to 'Edit', edit_bloodbank_path(@bloodbank), class: "btn btn-info" %> &nbsp;
+        <%= link_to 'Back', bloodbanks_path,class: "btn btn-info" %>
+
+        
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+    </div>
+</div>

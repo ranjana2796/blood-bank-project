@@ -1,0 +1,70 @@
+<div class="container" align="center">
+    <div class="jumbotron jumbotron-fluid"  id ="showbg">
+
+
+    <h2><u> Donor Details</u></h2>
+    <br>
+
+
+    <table align="center">
+  
+      <tbody>
+        <tr>
+          <th> &emsp; &emsp; &emsp; &emsp; DONORS NAME</th>
+          <td>: &nbsp <%= @donor.name %></td>   
+        </tr>
+        <tr>
+          <th> &emsp; &emsp; &emsp; &emsp;  BLOOD GROUP </th>
+          <td>: &nbsp <%= @donor.bloodgroup %></td>
+        </tr>
+        <tr>
+          <th> &emsp; &emsp; &emsp; &emsp;   DATE OF BIRTH</th>
+          <td>: &nbsp <%= @donor.dateofbirth %></td>
+        </tr>
+        <tr>
+          <th> &emsp; &emsp; &emsp; &emsp;   LOCATION</th>
+          <td>: &nbsp <%= @donor.location %></td>
+        </tr>
+        <tr>
+        <th> &emsp; &emsp; &emsp; &emsp;  CONTACT</th>
+        <td>: &nbsp <%= @donor.contact %></td>
+        </tr>
+        <tr>
+        <th> &emsp; &emsp; &emsp; &emsp;  E-MAIL</th>
+        <td>: &nbsp <%= @donor.email %></td>
+        </tr>
+
+     
+        <tr>
+          <th> &emsp; &emsp; &emsp; &emsp;   BLOOD BANK NAME</th>
+          <td>: &nbsp <%= @donor.bloodbank.name %></td>
+        </tr>
+        <tr>
+          <th> &emsp; &emsp; &emsp; &emsp;   BLOOD BANK ADDRESS </th>
+          <td>: &nbsp <%= @donor.bloodbank.address %></td>
+        </tr>
+      
+
+    </tbody>
+</table>
+      <br>
+      <%= link_to 'Back',donor_index_path, class: "btn btn-info" %>  &nbsp;
+      <%= link_to 'Edit Here', edit_donor_path,class: "btn btn-info" %>  
+      <br><br> <br> <br><br> 
+</div>
+</div>
+
+
+
+
+
+
+<% if false %>      
+ID No:<%= @donor.id %><br>
+NAME:<%= @donor.name %><br>
+BLOOD GROUP:<%= @donor.bloodgroup %><br>
+DATE OF BIRTH:<%= @donor.dateofbirth %><br>
+LOCATION:<%= @donor.location %><br>
+CONTACT:<%= @donor.contact %><br>
+EMAIL:<%= @donor.email %><br>
+<% end %>

@@ -1,0 +1,36 @@
+<div class="container" align="center">
+<div class="jumbotron text-white" id="accountbg">
+<h2><u>Sign Up</u></h2>
+<br>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"email@example.com", class:"form-control form-row col-md-4 mb-3" %>
+  </div>
+<br>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br>
+    <%= f.password_field :password, autocomplete: "new-password",placeholder:"Enter password", class:"form-control form-row col-md-4 mb-3" %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"Enter password again", class:"form-control form-row col-md-4 mb-3" %>
+  </div>
+
+  <br>
+  <div class="actions">
+    <%= f.submit "Sign up", class:"btn btn-info" %>
+  </div>
+  <br>
+  <% end %>
+  
+  <%= render "devise/shared/links" %>
+  </div>
+  </div>

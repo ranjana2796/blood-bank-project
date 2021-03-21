@@ -1,0 +1,41 @@
+
+<p id="notice"><%= notice %></p>
+
+<h1>Donors</h1>
+
+<table class="table"  id="tablecss">
+  <thead class="thead-dark bg-dark" align="center" >
+    <tr>
+      <th scope="col">NAME</th>
+      <th scope="col">BLOOD GROUP</th>
+      <th scope="col"> Blood Bank Donated To </th>
+
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody align="center" >
+  <% @donor.each do |i| %>
+    <tr>
+      <td><%= i.name %></td>
+      <td><%= i.bloodgroup %></td>
+      <td><%= i.bloodbank.name %></td>
+     
+      <td><%= link_to 'View More', donor_path(i), class: "btn btn-success" %> 
+
+      </td> &nbsp;
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+    <div class="flickr_pagination">
+      <%= will_paginate @donor %>
+    </div>
+<br>
+
+
+<%= link_to 'New Donor',new_donor_path, class: "btn btn-outline-danger" %>
+<br><br>
+

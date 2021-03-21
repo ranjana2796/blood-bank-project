@@ -1,0 +1,46 @@
+<div class="container" align = "center" id="jumbo"><br>
+    
+    <h2 class="text-white"> <u> Add New Donor </u> </h2> <br>
+    
+        <%= form_with scope: :donor, url: donor_index_path, local: true do |f| %>
+          
+        <%= f.text_field :name, autofocus: true,placeholder: "Enter your name here", class: "form-control form-row col-md-5 mb-3",required: true %><br>  
+
+        <div class="text-white">  Select Your Blood Group Here  : &emsp; &emsp; &nbsp;
+        <%= f.select :bloodgroup, [ 'A+', 'A-', 'B+', 'B-', 'O+','O-','AB+','AB-' ], 
+        :prompt => 'Select any one', required: true   %>
+        </div>
+
+        <br><br>
+
+        <div class="text-white">  Enter Date of Birth Here : &nbsp; 
+        <%= f.date_select(:dateofbirth, selected: Date.today, start_year: Date.today.year - 65, 
+        end_year: Date.today.year - 18) %>
+
+        <br><br>
+            
+        <%= f.text_area :location, size: "30x5", placeholder: "Enter your Address here", class: "form-control form-row col-md-5 mb-3", required: true%><br>
+
+        <%= f.number_field :contact, placeholder: "Enter your contact here", class: "form-control form-row col-md-5 mb-3",required: true %><br>
+
+        <%= f.email_field :email, placeholder: "Enter your email here", class: "form-control form-row col-md-5 mb-3", required: true %><br>
+
+        <div class="form-control form-row col-md-5 mb-3">
+        <%= f.select(:bloodbank_id, Bloodbank.all.collect {|p| [ p.name, p.id ] }, { :prompt => "Please select any on blood bank"}, ) %>
+        </div>
+        <%= link_to 'Back', donor_index_path,class: "btn btn-info" %>  
+        <%= f.submit :"Save Donor", class: "btn btn-info" %>
+
+        <% end %>
+  
+        <br>  <br>
+
+
+   
+
+</div>  
+
+
+
+
+

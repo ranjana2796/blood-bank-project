@@ -1,0 +1,19 @@
+<div class="container" align="center">
+    <div class="jumbotron jumbotron-fluid text-white"  id ="jumbo">
+
+        <h2>Donor Found : <%= @donor.size %></h2>
+
+
+        <% if @donor.empty? %>
+        <p>Sorry, no donors found.</p>
+        <% else %>
+        <ul type=none>
+        <br>
+            <% @donor.each do |donor| %>
+            <li><%= link_to donor.name, donor_path(donor),  class:"btn btn-link" %></li>
+            <% end %>
+        </ul>
+        <% end %>
+
+    </div> 
+</div>

@@ -1,0 +1,47 @@
+
+<div class="container text-white" align = "center" id="jumbo">
+<br>
+<h2><u>UPDATE DONOR DETAILS</u></h2>
+<br><br>
+
+
+<%= form_with(model: @donor, local: true) do |f| %>
+    <%= f.label :Name %>
+    <%= f.text_field :name, autofocus: true, class: "form-row col-md-5 mb-3" %><br>
+
+    <div class="text-white">  Update Your Blood Group Here  : 
+    <%= f.select :bloodgroup, [ 'A+', 'A-', 'B+', 'B-', 'O+','O-','AB+','AB-' ], :prompt => 'Select any one',
+    class: "form-control form-row col-md-8 mb-7",required: true   %>
+    <br>
+    <br>
+     
+    <div class="text-white">  Update DOB Here : 
+    <%= f.date_select(:dateofbirth, selected: Date.today, start_year: Date.today.year - 65, 
+    end_year: Date.today.year - 18) %>
+    <br><br><br>
+
+    <%= f.label :Location %>
+    <%= f.text_area :location,size: "30x5", class: "form-row col-md-5 mb-3" %><br>
+
+    <%= f.label :Contact %>
+    <%= f.text_field :contact, class: "form-row col-md-5 mb-3" %><br>
+
+    <%= f.label :Email %>
+    <%= f.text_field :email, class: "form-row col-md-5 mb-3" %><br>
+    
+   
+    <div class="form-control form-row col-md-5 mb-3">
+    <%= f.select(:bloodbank_id, Bloodbank.all.collect {|p| [ p.name, p.id ] }, 
+    { :prompt => "Please select any on blood bank"}, ) %>
+    </div>
+
+    <%= link_to 'Back', donor_path,class: "btn btn-info" %>  &nbsp;
+    <%= f.submit "Update", class: "btn btn-info" %>
+
+
+
+<% end %>    
+
+<br>  <br>
+</div>
+

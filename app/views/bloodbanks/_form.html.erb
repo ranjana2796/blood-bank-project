@@ -1,0 +1,38 @@
+
+<%= form_with(model: bloodbank, local: true) do |form| %>
+
+
+  <% if bloodbank.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bloodbank.errors.count, "error") %> prohibited this bloodbank from being saved:</h2>
+
+      <ul>
+        <% bloodbank.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <br>
+    <%= form.text_field :name, placeholder:"Enter blood bank name here", class:"form-control form-row col-md-5 mb-3" %>
+<br>
+    <%= form.text_area :address, size: "30x5", placeholder: "Enter Address of blood bank here", class: "form-control form-row col-md-5 mb-3", required: true%><br>
+
+   
+    <div class="text-white">  Select category of blood bank here : &nbsp;
+
+      <%= form.select :category, [ 'Govt', 'Private', 'Charity'], 
+      :prompt => 'Select any one', required: true   %>  
+    </div>
+    <br>
+ 
+    <%= form.text_field :availability, placeholder:"Enter blood groups available in blood bank ", class:"form-control form-row col-md-5 mb-3"%>
+
+  <br><br> 
+
+  <%= link_to 'Back', bloodbanks_path,class: "btn btn-info" %>
+  &ensp;
+  <%= form.submit 'Save Details', class: "btn btn-info" %> 
+
+  <% end %>
+  

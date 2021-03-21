@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Blood Banks</h1>
+<br>
+<table class="table bg-white" id="tablecss" >
+  <thead class="thead-dark bg-dark" align="center" >
+    <tr>
+      <th scope="col">Blood Bank Name</th>
+      <th scope="col">Available Blood Groups</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+
+  <tbody align="center" >
+    <% @bloodbanks.each do |bloodbank| %>
+      <tr>
+        <td><%= bloodbank.name %></td>
+        <td><%= bloodbank.availability %></td>
+        <td><%= link_to 'View More', bloodbank,  class: "btn btn-success" %>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<div class="flickr_pagination">
+<%= will_paginate @bloodbanks %>
+</div>
+
+
+<%= link_to 'New Bloodbank', new_bloodbank_path, class: "btn btn-outline-danger" %>
+<br>
+<br>
